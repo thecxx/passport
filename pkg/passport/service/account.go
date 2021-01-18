@@ -17,7 +17,7 @@ type AccountPublic struct {
 }
 
 type Validator interface {
-	Validate(atype, aname string, auth int, salt, secret string, vparams map[string]string) (bool, error)
+	Validate(atype, aname string, auth int, secret, salt string, vparams map[string]string) (bool, error)
 }
 
 type AccountService struct {
@@ -53,7 +53,7 @@ func (a *AccountService) Login(ctx context.Context, atype, aname, vname string, 
 		return AccountPublic{}, errors.New("account not found")
 	}
 
-	ok, err = validator.Validate(account.Type, account.Name, account.Auth, account.Salt, account.Secret, vparams)
+	ok, err = validator.Validate(account.Type, account.Name, account.Auth, account.Secret, account.Salt, vparams)
 	if err != nil {
 		return AccountPublic{}, err
 	}

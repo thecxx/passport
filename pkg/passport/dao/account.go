@@ -37,8 +37,8 @@ func (a *AccountDao) CreateAccount(ctx context.Context, atype, aname string, uid
 		Type:     atype,
 		Name:     aname,
 		Auth:     auth,
-		Salt:     salt,
 		Secret:   secret,
+		Salt:     salt,
 		UserId:   uid,
 		Status:   0,
 	}

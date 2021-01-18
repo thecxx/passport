@@ -5,8 +5,8 @@ type Account struct {
 	Type     string `column:"type"`
 	Name     string `column:"name"`
 	Auth     int    `column:"auth"`
-	Salt     string `column:"salt"`
 	Secret   string `column:"secret"`
+	Salt     string `column:"salt"`
 	UserId   string `column:"uid"`
 	Status   int    `column:"status"`
 }
@@ -31,14 +31,14 @@ func AccountAuth(value int) Column {
 	return Column{Name: "auth", Value: value}
 }
 
-// AccountSalt returns a salt column.
-func AccountSalt(value string) Column {
-	return Column{Name: "salt", Value: value}
-}
-
 // AccountSecret returns a secret column.
 func AccountSecret(value string) Column {
 	return Column{Name: "secret", Value: value}
+}
+
+// AccountSalt returns a salt column.
+func AccountSalt(value string) Column {
+	return Column{Name: "salt", Value: value}
 }
 
 // AccountUserId returns a uid column.

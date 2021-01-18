@@ -25,8 +25,8 @@ func (a *AccountTable) GetAccount(ctx context.Context, hashcode string) (schema.
 		Type:     "username",
 		Name:     "kami",
 		Auth:     0,
-		Salt:     "",
 		Secret:   "",
+		Salt:     "",
 		UserId:   "7c4a8d09ca3762af61e5",
 	}, nil
 }
