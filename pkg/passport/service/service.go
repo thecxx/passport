@@ -1,12 +1,12 @@
 package service
 
 var (
-	User    *UserService
+	UserId  *UserIdService
 	Account *AccountService
 )
 
 // Initialize service package.
 func Init() {
-	User = NewUserService()
+	UserId = NewUserIdService()
 	Account = NewAccountService()
 }
