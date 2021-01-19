@@ -4,11 +4,11 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/thecxx/passport/pkg/passport/errors"
+	"github.com/thecxx/passport/errors"
 
-	"github.com/thecxx/passport/pkg/passport/dao/database/mysql/schema"
+	"github.com/thecxx/passport/dao/database/mysql/schema"
 
-	"github.com/thecxx/passport/pkg/passport/dao/database/mysql"
+	"github.com/thecxx/passport/dao/database/mysql"
 )
 
 type AccountProtected struct {
@@ -36,9 +36,6 @@ func (a *AccountDao) CreateAccount(ctx context.Context, atype, aname string, uid
 		HashCode: a.hashcode(atype, aname),
 		Type:     atype,
 		Name:     aname,
-		Auth:     auth,
-		Secret:   secret,
-		Salt:     salt,
 		UserId:   uid,
 		Status:   0,
 	}

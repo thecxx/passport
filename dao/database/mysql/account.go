@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/thecxx/passport/pkg/passport/dao/database/mysql/schema"
+	"github.com/thecxx/passport/dao/database/mysql/schema"
 )
 
 type AccountTable struct {
@@ -24,9 +24,6 @@ func (a *AccountTable) GetAccount(ctx context.Context, hashcode string) (schema.
 		HashCode: "85136c79cbf9fe36bb9d05d0639c70c265c18d37",
 		Type:     "username",
 		Name:     "kami",
-		Auth:     0,
-		Secret:   "",
-		Salt:     "",
 		UserId:   "7c4a8d09ca3762af61e5",
 	}, nil
 }
